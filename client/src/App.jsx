@@ -103,12 +103,28 @@ function DemoAccountModal() {
           flex: 0 1 auto;
           display: flex;
           flex-direction: column;
-          overflow: hidden;
-          overscroll-behavior: none;
+          overflow-x: hidden;
+          overflow-y: auto;
+          overscroll-behavior: contain;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
           border: 1px solid #d1fae5;
           border-radius: 24px;
           background: white;
           box-shadow: 0 25px 60px rgb(0 0 0 / 25%);
+        }
+
+        .hisab-demo-card::-webkit-scrollbar,
+        .hisab-demo-card *::-webkit-scrollbar {
+          display: none;
+          width: 0;
+          height: 0;
+        }
+
+        .hisab-demo-card,
+        .hisab-demo-card * {
+          scrollbar-width: none;
+          -ms-overflow-style: none;
         }
 
         .hisab-demo-header {
@@ -120,18 +136,6 @@ function DemoAccountModal() {
           flex: 0 0 auto;
           min-width: 0;
           padding: 20px 28px 22px;
-        }
-
-        .hisab-demo-card,
-        .hisab-demo-card * {
-          scrollbar-width: none;
-        }
-
-        .hisab-demo-card::-webkit-scrollbar,
-        .hisab-demo-card *::-webkit-scrollbar {
-          display: none;
-          width: 0;
-          height: 0;
         }
 
         @media (max-height: 700px) {
